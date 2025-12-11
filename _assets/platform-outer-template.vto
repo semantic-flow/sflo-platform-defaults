@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>{{ page.title | default: "Semantic Flow" }}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ page.description | default: 'Semantic Flow – a modern 70s computer-manual inspired platform for weaving semantic data.' }}" />
+
+    <!-- Fonts: adjust to your own bundling strategy -->
+    <!-- Example (Google Fonts) – replace or self-host as needed -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+
+    <!-- Core Semantic Flow styles -->
+    <link rel="stylesheet" href="/static/css/semantic-flow.css" />
+  </head>
+
+  <body class="sf-body">
+    <a href="#sf-main" class="sf-skip-link">Skip to content</a>
+
+    <header class="sf-shell-header">
+      <div class="sf-shell-header-inner">
+        <a href="{{ routes.root | default: '/' }}" class="sf-brand">
+          <!-- Replace with inline SVG logo if you want -->
+          <img
+            src="/static/img/sf-monogram.svg"
+            alt="Semantic Flow"
+            class="sf-brand-mark"
+          />
+          <span class="sf-brand-wordmark">
+            <span class="sf-brand-wordmark-line1">Semantic</span>
+            <span class="sf-brand-wordmark-line2">Flow</span>
+          </span>
+        </a>
+
+        <nav class="sf-shell-nav" aria-label="Primary">
+          <ul>
+            <li><a href="{{ routes.docs | default: '/docs/' }}">Docs</a></li>
+            <li><a href="{{ routes.playground | default: '/playground/' }}">Playground</a></li>
+            <li><a href="{{ routes.templates | default: '/templates/' }}">Templates</a></li>
+            <li><a href="{{ routes.github | default: 'https://github.com/' }}">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="sf-main" class="sf-shell-main">
+      <!-- Optional hero; conditionally render if the page defines it -->
+      {{ page.hero | default: "" }}
+
+      <!-- Primary page content -->
+      <section class="sf-page">
+        {{ content }}
+      </section>
+    </main>
+
+    <footer class="sf-shell-footer">
+      <div class="sf-shell-footer-inner">
+        <p class="sf-footer-copy">
+          © {{ now.year | default: "2025" }} Semantic Flow.
+        </p>
+        <p class="sf-footer-meta">
+          Designed with a modern 70s computer-manual aesthetic.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

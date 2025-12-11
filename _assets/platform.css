@@ -1,0 +1,367 @@
+/* ---------------------------------------
+   Semantic Flow Core Styles
+   Palette: Sienna & Oat on Cream Paper
+   --------------------------------------- */
+
+:root {
+    /* Brand colors */
+    --sf-sienna: #a06a2c;
+    --sf-oat: #d2b075;
+    --sf-cream-paper: #f4e9d8;
+
+    /* Neutrals / text */
+    --sf-ink: #7a4e26;
+    --sf-slate: #4f5b66;
+
+    /* Accents */
+    --sf-teal-thread: #1fa8a8;
+    --sf-red-clay: #ba4a3a;
+    --sf-success-green: #4f7c3a;
+
+    /* Basic tokens */
+    --sf-radius: 8px;
+    --sf-stroke: 2px;
+
+    /* Spacing scale (8pt) */
+    --sf-space-1: 4px;
+    --sf-space-2: 8px;
+    --sf-space-3: 16px;
+    --sf-space-4: 24px;
+    --sf-space-5: 32px;
+    --sf-space-6: 48px;
+
+    /* Typography */
+    --sf-font-primary: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --sf-font-tech: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --sf-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* ---------------------------------------
+   Base
+   --------------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.sf-body {
+    background: var(--sf-cream-paper);
+    color: var(--sf-ink);
+    font-family: var(--sf-font-tech);
+    line-height: 1.5;
+}
+
+/* Skip link for accessibility */
+.sf-skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    padding: var(--sf-space-2) var(--sf-space-3);
+    background: var(--sf-sienna);
+    color: #fff;
+    z-index: 1000;
+}
+
+.sf-skip-link:focus {
+    left: var(--sf-space-3);
+}
+
+/* ---------------------------------------
+   Shell: header / nav / footer
+   --------------------------------------- */
+
+.sf-shell-header {
+    border-bottom: var(--sf-stroke) solid var(--sf-oat);
+    background: var(--sf-cream-paper);
+}
+
+.sf-shell-header-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: var(--sf-space-3) var(--sf-space-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sf-space-4);
+}
+
+.sf-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sf-space-2);
+    text-decoration: none;
+}
+
+.sf-brand-mark {
+    height: 56px;
+    width: auto;
+    display: block;
+}
+
+.sf-brand-wordmark {
+    display: inline-flex;
+    flex-direction: column;
+    font-family: var(--sf-font-primary);
+    color: var(--sf-sienna);
+    line-height: 1.1;
+}
+
+.sf-brand-wordmark-line1 {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.sf-brand-wordmark-line2 {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+/* Primary nav */
+
+.sf-shell-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: var(--sf-space-3);
+}
+
+.sf-shell-nav a {
+    font-family: var(--sf-font-primary);
+    color: var(--sf-ink);
+    font-weight: 500;
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.sf-shell-nav a:hover,
+.sf-shell-nav a:focus-visible {
+    border-bottom-color: var(--sf-oat);
+}
+
+/* Main shell */
+
+.sf-shell-main {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: var(--sf-space-5) var(--sf-space-4) var(--sf-space-6);
+}
+
+/* Footer */
+
+.sf-shell-footer {
+    border-top: var(--sf-stroke) solid var(--sf-oat);
+    background: var(--sf-cream-paper);
+    padding: var(--sf-space-3) 0;
+}
+
+.sf-shell-footer-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 var(--sf-space-4);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--sf-space-2);
+    font-size: 0.875rem;
+    color: var(--sf-slate);
+}
+
+/* ---------------------------------------
+   Page / content
+   --------------------------------------- */
+
+.sf-page {
+    background: #fff;
+    border-radius: var(--sf-radius);
+    border: var(--sf-stroke) solid var(--sf-oat);
+    padding: var(--sf-space-4);
+}
+
+/* Typography */
+
+.sf-page h1,
+.sf-page h2,
+.sf-page h3,
+.sf-page h4 {
+    font-family: var(--sf-font-primary);
+    color: var(--sf-sienna);
+    margin-top: var(--sf-space-3);
+    margin-bottom: var(--sf-space-2);
+}
+
+.sf-page h1 {
+    font-size: 2.2rem;
+    letter-spacing: -0.02em;
+}
+
+.sf-page h2 {
+    font-size: 1.8rem;
+}
+
+.sf-page h3 {
+    font-size: 1.4rem;
+}
+
+.sf-page p {
+    margin-top: 0;
+    margin-bottom: var(--sf-space-2);
+}
+
+/* Links */
+
+.sf-page a {
+    color: var(--sf-teal-thread);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(31, 168, 168, 0.4);
+}
+
+.sf-page a:hover,
+.sf-page a:focus-visible {
+    border-bottom-color: var(--sf-teal-thread);
+}
+
+/* ---------------------------------------
+   Buttons
+   --------------------------------------- */
+
+.sf-btn-primary,
+.sf-btn-secondary {
+    font-family: var(--sf-font-primary);
+    font-size: 0.95rem;
+    border-radius: var(--sf-radius);
+    padding: 10px 18px;
+    cursor: pointer;
+    transition: background 0.12s ease-out, color 0.12s ease-out, border-color 0.12s ease-out;
+}
+
+/* Primary button */
+.sf-btn-primary {
+    background: var(--sf-sienna);
+    color: #fff;
+    border: none;
+    font-weight: 500;
+}
+
+.sf-btn-primary:hover,
+.sf-btn-primary:focus-visible {
+    background: #8e5c24;
+}
+
+/* Secondary button */
+.sf-btn-secondary {
+    background: transparent;
+    color: var(--sf-sienna);
+    border: var(--sf-stroke) solid var(--sf-oat);
+    font-weight: 500;
+}
+
+.sf-btn-secondary:hover,
+.sf-btn-secondary:focus-visible {
+    background: var(--sf-oat);
+    color: var(--sf-ink);
+}
+
+/* ---------------------------------------
+   Example reusable pieces
+   --------------------------------------- */
+
+/* Cards */
+
+.sf-card {
+    background: #fff;
+    border-radius: var(--sf-radius);
+    border: var(--sf-stroke) solid var(--sf-oat);
+    padding: var(--sf-space-3);
+    font-family: var(--sf-font-tech);
+    margin-bottom: var(--sf-space-3);
+}
+
+.sf-card-title {
+    font-family: var(--sf-font-primary);
+    font-weight: 600;
+    color: var(--sf-sienna);
+    margin: 0 0 var(--sf-space-1);
+}
+
+/* Code blocks */
+
+.sf-code {
+    font-family: var(--sf-font-mono);
+    font-size: 0.9rem;
+    background: #f7f0e4;
+    border-radius: var(--sf-radius);
+    padding: var(--sf-space-2) var(--sf-space-3);
+    border: 1px solid var(--sf-oat);
+    overflow-x: auto;
+}
+
+/* Tables (manual / technical look) */
+
+.sf-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--sf-font-tech);
+    font-size: 0.94rem;
+    margin-bottom: var(--sf-space-3);
+}
+
+.sf-table th,
+.sf-table td {
+    border: 1px solid var(--sf-oat);
+    padding: var(--sf-space-1) var(--sf-space-2);
+}
+
+.sf-table thead {
+    background: var(--sf-oat);
+    color: #fff;
+}
+
+.sf-table tbody tr:nth-child(even) {
+    background: #fbf5eb;
+}
+
+/* Status text */
+
+.sf-status-ok {
+    color: var(--sf-success-green);
+    font-weight: 600;
+}
+
+.sf-status-warn {
+    color: var(--sf-red-clay);
+    font-weight: 600;
+}
+
+/* ---------------------------------------
+   Simple responsive tweak
+   --------------------------------------- */
+
+@media (max-width: 768px) {
+    .sf-shell-header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sf-shell-nav ul {
+        flex-wrap: wrap;
+        row-gap: var(--sf-space-1);
+    }
+
+    .sf-shell-main {
+        padding: var(--sf-space-4) var(--sf-space-3) var(--sf-space-5);
+    }
+
+    .sf-page {
+        padding: var(--sf-space-3);
+    }
+}
