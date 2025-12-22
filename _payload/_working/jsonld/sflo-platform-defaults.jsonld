@@ -1,0 +1,42 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sflo": "https://semantic-flow.github.io/ontology/semantic-flow/",
+    "conf": "https://semantic-flow.github.io/ontology/sflo-config-ontology/"
+  },
+  "@graph": [
+    {
+      "@id": "../../../",
+      "@type": "KnopNodeConfig/",
+      "rdfs:label": "sflo platform default configuration",
+      "rdfs:comment": "The Semantic Flow platform defaultconfiguration should be used by applications to infer default behavior when not defined elsewhere.",
+      "conf:versioningEnabled": true,
+      "conf:useTimestamps": false,
+      "conf:knopNodeConfigInheritanceEnabled": true,
+      "conf:generateResourcePages": true,
+      "conf:hasTemplateMappingSet": {
+        "@id": "../../../platform-default-mapping-set/"
+      }
+    },
+    {
+      "@id": "../../../platform-default-mapping-set/",
+      "@type": "TemplateMappingSet/",
+      "rdfs:label": "sflo platform default template mappings",
+      "rdfs:comment": "The Semantic Flow platform default template mappings should be used by applications to infer default template mappings when not defined elsewhere.",
+      "conf:hasTemplateMapping": [
+        {
+          "@id": "../../../platform-default-mapping/"
+        }
+      ]
+    },
+    {
+      "@id": "../../../platform-default-mapping/",
+      "@type": "TemplateMapping/",
+      "rdfs:label": "sflo platform default inner template mapping",
+      "rdfs:comment": "The Semantic Flow platform default inner template mapping should be used by applications to infer default inner template mappings when not defined elsewhere.",
+      "conf:innerTemplate": "../../../platform-inner-template.vto",
+      "conf:outerTemplate": "../../../platform-outer-template.vto",
+      "conf:stylesheet": "../../../platform.css"
+    }
+  ]
+}
