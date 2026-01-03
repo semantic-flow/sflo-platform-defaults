@@ -1,20 +1,14 @@
 {
   "@context": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-<<<<<<< HEAD
-    "sflo": "https://semantic-flow.github.io/ontology/semantic-flow/",
-    "conf": "https://semantic-flow.github.io/ontology/sflo-config-ontology/"
-=======
     "conf": "https://semantic-flow.github.io/ontology/sflo-config/",
     "sflo": "https://semantic-flow.github.io/ontology/semantic-flow-ontology/"
->>>>>>> 475d64b (initial assets)
   },
   "@graph": [
     {
       "@id": "../../../",
       "@type": "KnopNodeConfig/",
       "rdfs:label": "sflo platform default configuration",
-<<<<<<< HEAD
       "rdfs:comment": "The Semantic Flow platform defaultconfiguration should be used by applications to infer default behavior when not defined elsewhere.",
       "conf:versioningEnabled": true,
       "conf:useTimestamps": false,
@@ -32,33 +26,10 @@
       "conf:hasTemplateMapping": [
         {
           "@id": "../../../platform-default-mapping/"
-=======
-      "rdfs:comment": "The Semantic Flow platform default configuration should be used by applications to infer default behavior when not defined elsewhere.",
-      "conf:useTimestamps": false,
-      "conf:knopConfigInheritanceEnabled": true,
-      "conf:generateResourcePages": true,
-      "conf:hasTemplateMappingSet": {
-        "@id": "#platform-default-mappings"
-      },
-      "conf:workingToken": "_working"
-    },
-    {
-      "@id": "#platform-default-mappings/",
-      "@type": "conf:TemplateMappingSet/",
-      "rdfs:label": "Platform default template mappings",
-      "rdfs:comment": "Default template mappings for the Semantic Flow platform.",
-      "conf:hasTemplateMapping": [
-        {
-          "@id": "../../../#outer-default-template/"
-        },
-        {
-          "@id": "../../../#inner-default-template"
->>>>>>> 475d64b (initial assets)
         }
       ]
     },
     {
-<<<<<<< HEAD
       "@id": "../../../platform-default-mapping/",
       "@type": "TemplateMapping/",
       "rdfs:label": "sflo platform default inner template mapping",
@@ -66,30 +37,6 @@
       "conf:innerTemplate": "../../../platform-inner-template.vto",
       "conf:outerTemplate": "../../../platform-outer-template.vto",
       "conf:stylesheet": "../../../platform.css"
-=======
-      "@id": "../../../#outer-default-template/",
-      "@type": "conf:TemplateMapping/",
-      "rdfs:label": "Outer default template",
-      "rdfs:comment": "Default outer layout applied to all knops (no class/slug filters).",
-      "conf:outerTemplateUrl": "https: //raw.githubusercontent.com/semantic-flow/sflo-platform-defaults/refs/heads/main/platform-outer-template.vto",
-      "conf:stylesheetUrl": [
-        "https: //raw.githubusercontent.com/semantic-flow/sflo-platform-defaults/refs/heads/main/platform.css"
-      ],
-      "conf:mappingPriority": {
-        "@value": 0,
-        "@type": "xsd:integer"
-      }
-    },
-    {
-      "@id": "../../../#inner-default-template",
-      "@type": "conf:TemplateMapping/",
-      "rdfs:label": "Inner default template",
-      "rdfs:comment": "Default inner layout applied to all knops (no class/slug filters).",
-      "conf:innerTemplateUrl": "https: //raw.githubusercontent.com/semantic-flow/sflo-platform-defaults/refs/heads/main/platform-inner-template.vto",
-      "conf:mappingPriority": {
-        "@value": 0,
-        "@type": "xsd:integer"
-      }
     },
     {
       "@id": "sflo:ReferenceFlow/",
@@ -112,23 +59,23 @@
     },
     {
       "@id": "sflo:InventoryDataset/",
-      "conf:folderToken/": "_knop-node/_inventory/"
+      "conf:folderToken/": "_knop/_inventory/"
     },
     {
       "@id": "sflo:OpslogDataset/",
-      "conf:folderToken/": "_knop-node/_opslog/"
+      "conf:folderToken/": "_knop/_opslog/"
     },
     {
       "@id": "sflo:InheritableKnopConfig/",
-      "conf:folderToken/": "_knop-node/_cfg-inh"
+      "conf:folderToken/": "_knop/_cfg-inh"
     },
     {
       "@id": "sflo:LocalKnopConfig",
-      "conf:folderToken/": "_knop-node/_cfg-local"
+      "conf:folderToken/": "_knop/_cfg-local"
     },
     {
       "@id": "sflo:BacklinksDataset/",
-      "conf:folderToken/": "_knop-node/_backlinks/"
+      "conf:folderToken/": "_knop/_backlinks/"
     },
     {
       "@id": "sflo:JsonldDistribution/",
@@ -141,7 +88,6 @@
     {
       "@id": "sflo:TrigDistribution/",
       "conf:fileToken/": "trig"
->>>>>>> 475d64b (initial assets)
     }
   ]
 }
